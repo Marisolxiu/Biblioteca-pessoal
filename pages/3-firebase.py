@@ -7,8 +7,6 @@ st.title("Firebase, formulário")
 cred = st.secrets["firebase"]
 db = firestore.Client.from_service_account_info(cred)
 
-# baseDados = firestore.Client.from_service_account_json("firebase.json")
-
 #formulario de cadastro
 with st.form("formfirebase"):
     nome= st.text_input("Nome:", placeholder="Informe seu nome...")
