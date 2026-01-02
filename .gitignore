@@ -1,11 +1,11 @@
-# # Credenciais
-# *.json
-# .env
+# Credenciais
+*.json
+.env
 
-# # Firebase / GCP
-# serviceAccountKey.json
-# firebase.json
+# Firebase / GCP
+serviceAccountKey.json
+firebase.json
 
-# # Python
-# __pycache__/
-# .venv/
+# Python
+__pycache__/
+.venv/

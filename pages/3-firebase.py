@@ -4,7 +4,10 @@ from google.cloud import firestore
 
 st.title("Firebase, formulário")
 
-baseDados = firestore.Client.from_service_account_json("firebase.json")
+cred = st.secrets["firebase"]
+db = firestore.Client.from_service_account_info(cred)
+
+# baseDados = firestore.Client.from_service_account_json("firebase.json")
 
 #formulario de cadastro
 with st.form("formfirebase"):
@@ -17,7 +20,7 @@ with st.form("formfirebase"):
 if btnSalvarUsuario:
     if nome and idade and senha and apelido:
     #Salvar no banco
-        novoUsuario = baseDados.collection("usuarios").document(apelido)
+        novoUsuario = db.collection("usuarios").document(apelido)
         novoUsuario.set(
             {
             "nome": nome,
